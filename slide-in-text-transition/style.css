@@ -1,0 +1,60 @@
+/*
+ * Animated Text necessary-to-work CSS
+ */
+[data-text-animation] {
+    visibility: hidden;
+}
+
+[data-text-animation].visible {
+    visibility: visible;
+}
+
+.animatable-wrapper {
+    overflow: hidden;
+}
+
+span.animatable-wrapper {
+    display: inline-block;
+}
+
+.animatable-wrapper > div {
+    display: inline-block;
+    transform: translate(0%, 100%); /* Modify this to change the transition direction */
+    opacity: 0;
+    transition: transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 750ms;
+}
+
+.animatable-wrapper.shown > div {
+    transform: translate(0%, 0%);
+    opacity: 1;
+}
+
+.additional-space {
+    display: inline-block;
+}
+
+/*
+ * Additional unnecessary styles
+ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 3em;
+    text-align: center;
+}
+
+.lines {
+    font-size: 0.6em;
+}
