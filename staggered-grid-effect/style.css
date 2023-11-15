@@ -31,3 +31,16 @@ body {
     margin: 0;
     overflow: hidden;
 }
+
+.tip {
+    position: fixed;
+    z-index: 3;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
