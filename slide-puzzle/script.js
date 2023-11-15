@@ -6,6 +6,7 @@ document.querySelector('#next').addEventListener('click', () => {
     }
 
     const grid = new Grid(document.querySelector('#link').value, numberOfColumns, () => {
+        document.querySelector('.loading').classList.add('hidden');
         document.body.append(grid.element);
 
         if (
@@ -31,6 +32,7 @@ document.querySelector('#next').addEventListener('click', () => {
         };
     });
 
+    document.querySelector('.loading').classList.remove('hidden');
     document.querySelector('#next').remove();
     document.querySelector('#link').remove();
     document.querySelector('#columns').remove();

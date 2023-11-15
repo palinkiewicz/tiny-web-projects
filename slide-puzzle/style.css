@@ -10,6 +10,7 @@ body {
     height: 100vh;
     margin: 0;
     background: #111;
+    color: #fff;
 }
 
 input {
@@ -30,4 +31,8 @@ button {
     font-size: 1.2em;
     border: none;
     border-radius: 8px;
+}
+
+.hidden {
+    display: none;
 }
