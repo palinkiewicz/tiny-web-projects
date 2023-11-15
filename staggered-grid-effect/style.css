@@ -1,0 +1,33 @@
+/*
+ * Necessary styles
+ */
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.cell-row {
+    display: flex;
+    flex: 1;
+}
+
+.cell {
+    border: 1px solid black;
+    height: 100%;
+    flex: 1;
+    scale: 1;
+    transition: background-color 0.2s, scale 0.1s;
+}
+
+/*
+ * Additional unnecessary styles
+ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
