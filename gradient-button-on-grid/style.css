@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+@keyframes moveGrid {
+    0% {
+        transform: perspective(450px) rotate3d(1, -1, 1, 60deg) translate3d(0, 10%, 100px);
+    }
+    100% {
+        transform: perspective(450px) rotate3d(1, -1, 1, 60deg) translate3d(0, 10%, 100px) translateX(50px);
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -48,6 +57,7 @@ article {
             linear-gradient(to right, white 3px, transparent 1px),
             linear-gradient(to bottom, white 3px, transparent 1px);
     transform: perspective(450px) rotate3d(1, -1, 1, 60deg) translate3d(0, 10%, 100px);
+    animation: moveGrid 5s linear infinite;
 }
 
 .grid::after {
