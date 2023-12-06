@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+}
+
+section {
+    height: 100vh;
+}
+
+article {
+    height: 300px;
+    width: 100%;
+    margin: 8px;
+    max-width: 500px;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    position: relative;
+    background-color: #111111;
+    border-radius: 8px;
+    border: 1px rgba(99, 99, 99, 0.2) solid;
+    overflow: hidden;
+}
+
+.grid::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    background-size: 50px 50px;
+    background-image:
+            linear-gradient(to right, white 3px, transparent 1px),
+            linear-gradient(to bottom, white 3px, transparent 1px);
+    transform: perspective(450px) rotate3d(1, -1, 1, 60deg) translate3d(-10%, 10%, 100px);
+}
+
+.grid::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(130deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0.5) 100%);;
+}
