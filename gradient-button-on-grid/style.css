@@ -36,7 +36,6 @@ article {
 }
 
 .grid {
-    z-index: -3;
     position: relative;
     background-color: #111111;
     border-radius: 8px;
@@ -45,7 +44,6 @@ article {
 }
 
 .grid::before {
-    z-index: -3;
     content: "";
     position: absolute;
     width: 300%;
@@ -61,7 +59,6 @@ article {
 }
 
 .grid::after {
-    z-index: -3;
     content: "";
     position: absolute;
     width: 100%;
@@ -70,6 +67,7 @@ article {
 }
 
 .gradient-button {
+    z-index: 1;
     position: relative;
     padding: 16px 24px;
     border-radius: 8px;
@@ -77,6 +75,13 @@ article {
     font-family: 'Poppins', sans-serif;
     border: none;
     background: transparent;
+    transition: transform 300ms;
+    transform: translate(-2px, -2px);
+}
+
+.gradient-button:hover {
+    transform: translate(-6px, -6px);
+    cursor: pointer;
 }
 
 .gradient-button::before {
@@ -89,7 +94,7 @@ article {
     height: 100%;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
     box-shadow: rgba(0, 0, 0, 0.5) 0 2px 8px 0;
 }
 
@@ -112,4 +117,11 @@ article {
             radial-gradient(at 75% 81%, hsla(29,67%,61%,1) 0px, transparent 50%),
             radial-gradient(at 15% 32%, hsla(172,94%,70%,1) 0px, transparent 50%);
     box-shadow: rgba(0, 0, 0, 0.5) 0 2px 8px 0;
+    transform: translate(4px, 4px);
+    transition: transform 300ms;
+}
+
+.gradient-button:hover::after {
+    transform: translate(12px, 12px);
+    cursor: pointer;
 }
