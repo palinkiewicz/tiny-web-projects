@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -25,6 +27,7 @@ article {
 }
 
 .grid {
+    z-index: -3;
     position: relative;
     background-color: #111111;
     border-radius: 8px;
@@ -33,6 +36,7 @@ article {
 }
 
 .grid::before {
+    z-index: -3;
     content: "";
     position: absolute;
     width: 300%;
@@ -43,13 +47,59 @@ article {
     background-image:
             linear-gradient(to right, white 3px, transparent 1px),
             linear-gradient(to bottom, white 3px, transparent 1px);
-    transform: perspective(450px) rotate3d(1, -1, 1, 60deg) translate3d(-10%, 10%, 100px);
+    transform: perspective(450px) rotate3d(1, -1, 1, 60deg) translate3d(0, 10%, 100px);
 }
 
 .grid::after {
+    z-index: -3;
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(130deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0.5) 100%);;
+}
+
+.gradient-button {
+    position: relative;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background: transparent;
+}
+
+.gradient-button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 2px 8px 0;
+}
+
+.gradient-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color:#d3ff99;
+    background-image:
+            radial-gradient(at 32% 98%, hsla(293,66%,72%,1) 0px, transparent 50%),
+            radial-gradient(at 61% 28%, hsla(156,62%,73%,1) 0px, transparent 50%),
+            radial-gradient(at 40% 76%, hsla(82,85%,70%,1) 0px, transparent 50%),
+            radial-gradient(at 12% 85%, hsla(33,89%,68%,1) 0px, transparent 50%),
+            radial-gradient(at 67% 88%, hsla(62,77%,70%,1) 0px, transparent 50%),
+            radial-gradient(at 75% 81%, hsla(29,67%,61%,1) 0px, transparent 50%),
+            radial-gradient(at 15% 32%, hsla(172,94%,70%,1) 0px, transparent 50%);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 2px 8px 0;
 }
